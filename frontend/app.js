@@ -10,6 +10,36 @@ const state = {
 const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
 const activeStatuses = new Set(["queued", "running", "stopping"]);
+function configuredApiBase() {
+  const configured = String(window.ITCYBER_CONFIG?.apiBaseUrl || "")
+    .trim()
+    .replace(/\/$/, "");
+
+  if (!configured || configured.includes("YOUR-RAILWAY")) {
+    return "";
+  }
+
+  try {
+    const url = new URL(configured);
+
+    const isLocal = [
+      "localhost",
+      "127.0.0.1"
+    ].includes(url.hostname);
+
+    if (
+      url.protocol !== "https:" &&
+      !(isLocal && url.protocol === "http:")
+    ) {
+      return "";
+    }
+
+    return url.origin;
+  } catch (error) {
+    console.error("Invalid backend URL:", error);
+    return "";
+  }
+}
 
 function escapeHtml(value) {
   return String(value ?? "")
