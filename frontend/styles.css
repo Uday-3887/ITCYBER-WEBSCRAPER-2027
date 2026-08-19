@@ -377,3 +377,597 @@ tbody tr:hover td { background: rgba(139,92,246,.025); }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
 }
+
+/* =========================================================
+   ITCYBER SCRAP — Enhanced Mobile / Tablet Responsiveness
+   Replace your existing frontend/styles.css with this file.
+   ========================================================= */
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img, svg, video, canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+input, select, textarea, button {
+  max-width: 100%;
+}
+
+.table-wrap {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-inline: contain;
+}
+
+.console pre {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .content {
+    width: 100%;
+  }
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    overflow: hidden;
+  }
+
+  .workspace-grid,
+  .safety-grid {
+    min-width: 0;
+  }
+
+  .panel,
+  .metric-card,
+  .hero,
+  .safety-card {
+    min-width: 0;
+  }
+
+  .safety-card.wide {
+    flex-direction: column;
+  }
+
+  .data-summary {
+    flex-wrap: wrap;
+  }
+
+  .data-summary p {
+    flex: 1 1 100%;
+  }
+}
+
+/* Phones and small tablets */
+@media (max-width: 760px) {
+  body {
+    min-width: 0;
+  }
+
+  .app-shell {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .sidebar {
+    width: min(286px, 86vw);
+    padding: 22px 15px 18px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .brand {
+    padding: 0 8px 22px;
+  }
+
+  .nav-item {
+    min-height: 46px;
+    padding: 11px 12px;
+    font-size: 13px;
+  }
+
+  .main {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .topbar {
+    width: 100%;
+    min-width: 0;
+    padding: 0 12px;
+    gap: 7px;
+  }
+
+  .page-heading {
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .page-heading p {
+    display: none;
+  }
+
+  .page-heading h1 {
+    max-width: 46vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 15px;
+  }
+
+  .topbar-actions {
+    flex: 0 0 auto;
+    gap: 6px;
+  }
+
+  .icon-button {
+    min-width: 40px;
+    min-height: 40px;
+  }
+
+  .content {
+    width: 100%;
+    max-width: 100%;
+    padding: 14px 12px 30px;
+    overflow: hidden;
+  }
+
+  .hero {
+    width: 100%;
+    min-height: 0;
+    padding: 22px 18px;
+    border-radius: 15px;
+  }
+
+  .hero h2 {
+    font-size: clamp(28px, 8.2vw, 40px);
+    line-height: 1.08;
+    overflow-wrap: anywhere;
+  }
+
+  .hero p {
+    max-width: 100%;
+    font-size: 11px;
+    line-height: 1.65;
+  }
+
+  .hero-visual {
+    width: 100%;
+    min-height: 150px;
+    height: 150px;
+    overflow: hidden;
+  }
+
+  .radar {
+    width: 126px;
+    height: 126px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  .floating-card {
+    transform: scale(.88);
+    transform-origin: center;
+  }
+
+  .card-one {
+    left: -6px;
+  }
+
+  .card-two {
+    right: -6px;
+  }
+
+  .metric-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .metric-card {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .metric-card > div:last-child {
+    min-width: 0;
+  }
+
+  .metric-card span,
+  .metric-card small {
+    overflow-wrap: anywhere;
+  }
+
+  .workspace-grid {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .panel {
+    max-width: 100%;
+    border-radius: 14px;
+  }
+
+  .launch-panel,
+  .active-panel,
+  .recent-panel,
+  #view-jobs .panel,
+  #view-data .panel,
+  .safety-card {
+    padding: 16px;
+  }
+
+  .panel-heading {
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .panel-heading h3 {
+    font-size: 17px;
+    overflow-wrap: anywhere;
+  }
+
+  .form-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 11px;
+  }
+
+  .field,
+  .field.full {
+    min-width: 0;
+  }
+
+  .field input,
+  .field select,
+  .input-wrap input,
+  .toolbar select,
+  .data-selector select,
+  .search-box {
+    width: 100%;
+    min-width: 0;
+    min-height: 44px;
+    font-size: 16px; /* prevents iOS auto zoom */
+  }
+
+  .input-wrap b {
+    top: 12px;
+  }
+
+  .presets {
+    width: 100%;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+
+  .presets button {
+    flex: 1 1 145px;
+    min-height: 38px;
+    white-space: normal;
+  }
+
+  .primary-button {
+    min-height: 48px;
+  }
+
+  .primary-button.compact,
+  .secondary-button,
+  .danger-button {
+    min-height: 42px;
+  }
+
+  .mode-note {
+    width: 100%;
+  }
+
+  .mode-note p {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .active-panel {
+    min-height: 0;
+  }
+
+  .job-title-row {
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .job-title-row > div {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .job-title-row h4 {
+    overflow-wrap: anywhere;
+  }
+
+  .progress-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .progress-stats div {
+    min-width: 0;
+    padding: 8px 6px;
+  }
+
+  .progress-stats span {
+    font-size: 7px;
+  }
+
+  .progress-stats strong {
+    font-size: 12px;
+    overflow-wrap: anywhere;
+  }
+
+  .console {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .console pre {
+    width: 100%;
+    height: 160px;
+    font-size: 9px;
+  }
+
+  .job-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .job-actions button {
+    flex: 1 1 150px;
+    width: auto;
+  }
+
+  .section-intro {
+    width: 100%;
+    gap: 12px;
+  }
+
+  .section-intro > div {
+    min-width: 0;
+  }
+
+  .section-intro h2 {
+    overflow-wrap: anywhere;
+  }
+
+  .section-intro .primary-button.compact {
+    width: 100%;
+  }
+
+  .toolbar,
+  .data-selector {
+    width: 100%;
+    gap: 10px;
+  }
+
+  .search-box {
+    display: flex;
+  }
+
+  .search-box input {
+    min-width: 0;
+    font-size: 16px;
+  }
+
+  .data-selector label {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .data-summary {
+    width: 100%;
+    gap: 10px;
+    padding: 11px;
+  }
+
+  .data-summary div {
+    border-right: 0;
+    padding-right: 0;
+  }
+
+  table {
+    min-width: 680px;
+  }
+
+  th,
+  td {
+    white-space: nowrap;
+  }
+
+  .safety-card.wide {
+    flex-direction: column;
+  }
+
+  .workflow-steps {
+    align-items: stretch;
+    gap: 7px;
+  }
+
+  .workflow-steps span {
+    flex: 1 1 140px;
+    text-align: center;
+  }
+
+  .workflow-steps i {
+    display: none;
+  }
+
+  .toast {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    width: auto;
+    min-width: 0;
+    max-width: none;
+  }
+
+  .modal-backdrop {
+    padding: 12px;
+    align-items: end;
+  }
+
+  .modal-card {
+    width: 100%;
+    max-height: 88vh;
+    overflow-y: auto;
+    border-radius: 16px;
+    padding: 18px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 520px) {
+  .topbar {
+    height: 62px;
+  }
+
+  .content {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .page-heading h1 {
+    max-width: 38vw;
+    font-size: 14px;
+  }
+
+  .hero {
+    padding: 19px 15px;
+  }
+
+  .hero h2 {
+    font-size: clamp(25px, 8.5vw, 34px);
+  }
+
+  .eyebrow {
+    font-size: 8px;
+  }
+
+  .hero-visual {
+    min-height: 138px;
+    height: 138px;
+  }
+
+  .floating-card {
+    transform: scale(.78);
+  }
+
+  .metric-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .metric-card {
+    min-height: 82px;
+  }
+
+  .panel-heading {
+    flex-wrap: wrap;
+  }
+
+  .step-badge,
+  .live-dot {
+    flex: 0 0 auto;
+  }
+
+  .progress-stats {
+    gap: 6px;
+  }
+
+  .progress-stats div {
+    padding: 7px 4px;
+    text-align: center;
+  }
+
+  .progress-stats span {
+    font-size: 6.5px;
+    letter-spacing: 0;
+  }
+
+  .progress-stats strong {
+    font-size: 11px;
+  }
+
+  .job-title-row {
+    flex-direction: column;
+  }
+
+  .job-title-row .danger-button {
+    width: 100%;
+  }
+
+  .job-actions {
+    flex-direction: column;
+  }
+
+  .job-actions button {
+    width: 100%;
+    flex: none;
+  }
+
+  .recent-panel {
+    padding: 14px;
+  }
+
+  table {
+    min-width: 620px;
+  }
+
+  .table-action {
+    min-height: 36px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  .content {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .topbar {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .page-heading {
+    margin-left: 6px;
+  }
+
+  .page-heading h1 {
+    max-width: 32vw;
+    font-size: 13px;
+  }
+
+  .hero,
+  .launch-panel,
+  .active-panel,
+  .recent-panel,
+  #view-jobs .panel,
+  #view-data .panel,
+  .safety-card {
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+
+  .hero-visual {
+    height: 125px;
+    min-height: 125px;
+  }
+
+  .floating-card {
+    transform: scale(.7);
+  }
+}
