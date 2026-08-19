@@ -11,7 +11,9 @@ const $ = (selector) => document.querySelector(selector);
 const $$ = (selector) => [...document.querySelectorAll(selector)];
 const activeStatuses = new Set(["queued", "running", "stopping"]);
 function configuredApiBase() {
-  const configured = String(window.ITCYBER_CONFIG?.apiBaseUrl || "")
+  const configured = String(
+    window.ITCYBER_CONFIG?.apiBaseUrl || ""
+  )
     .trim()
     .replace(/\/$/, "");
 
@@ -22,10 +24,9 @@ function configuredApiBase() {
   try {
     const url = new URL(configured);
 
-    const isLocal = [
-      "localhost",
-      "127.0.0.1"
-    ].includes(url.hostname);
+    const isLocal =
+      url.hostname === "localhost" ||
+      url.hostname === "127.0.0.1";
 
     if (
       url.protocol !== "https:" &&
